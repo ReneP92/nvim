@@ -10,28 +10,28 @@ Leader key: `<Space>`
 - `git`
 - A Nerd Font (icons)
 - Optional but recommended:
-	- `make` (builds `telescope-fzf-native` and LuaSnip’s optional regexp engine)
-	- Node.js (for many LSP servers/tools like `tsserver`, `prettier`, `eslint`)
+  - `make` (builds `telescope-fzf-native` and LuaSnip’s optional regexp engine)
+  - Node.js (for many LSP servers/tools like `tsserver`, `prettier`, `eslint`)
 
 ## Install
 
 1. Back up your current config:
 
-	 ```sh
-	 mv ~/.config/nvim ~/.config/nvim.bak
-	 ```
+   ```sh
+   mv ~/.config/nvim ~/.config/nvim.bak
+   ```
 
 2. Clone this repo:
 
-	 ```sh
-	 git clone <YOUR_REPO_URL> ~/.config/nvim
-	 ```
+   ```sh
+   git clone <YOUR_REPO_URL> ~/.config/nvim
+   ```
 
 3. Start Neovim:
 
-	 ```sh
-	 nvim
-	 ```
+   ```sh
+   nvim
+   ```
 
 On first launch, `lazy.nvim` bootstraps automatically and installs plugins.
 
@@ -46,20 +46,20 @@ On first launch, `lazy.nvim` bootstraps automatically and installs plugins.
 
 - LSP keymaps attached per-buffer via `LspAttach`
 - Servers installed via Mason (`mason-lspconfig`):
-	- `pyright`, `ts_ls`, `html`, `cssls`, `tailwindcss`, `svelte`, `lua_ls`, `graphql`, `emmet_ls`, `prismals`, `eslint`
+  - `pyright`, `ts_ls`, `html`, `cssls`, `tailwindcss`, `svelte`, `lua_ls`, `graphql`, `emmet_ls`, `prismals`, `eslint`
 - Extra server tweaks in `after/lsp/*` for:
-	- `eslint` (filetypes)
-	- `svelte` (notify TS/JS changes on save)
-	- `graphql` / `emmet_ls` (filetypes)
+  - `eslint` (filetypes)
+  - `svelte` (notify TS/JS changes on save)
+  - `graphql` / `emmet_ls` (filetypes)
 
 ### Formatting
 
 - `conform.nvim` format-on-save (with LSP fallback)
 - Formatters by filetype:
-	- JS/TS/JSON/YAML/Markdown/GraphQL/etc: `prettier`
-	- Lua: `stylua`
-	- Python: `ruff`
-	- Shell: `shfmt`
+  - JS/TS/JSON/YAML/Markdown/GraphQL/etc: `prettier`
+  - Lua: `stylua`
+  - Python: `ruff`
+  - Shell: `shfmt`
 
 ### Linting
 
@@ -94,100 +94,125 @@ On first launch, `lazy.nvim` bootstraps automatically and installs plugins.
 
 ### General
 
-- Insert: `jk` → escape
-- `<leader>nh` → clear search highlights
-- `<leader>+` / `<leader>-` → increment/decrement number
+| Mode | Keys | Action |
+| --- | --- | --- |
+| Insert | `jk` | Escape |
+| Normal | `<leader>nh` | Clear search highlights |
+| Normal | `<leader>+` / `<leader>-` | Increment / decrement number |
 
 ### Windows / tabs
 
-- `<leader>sv` / `<leader>sh` → vertical/horizontal split
-- `<leader>se` → equalize splits
-- `<leader>sx` → close split
-- `<leader>sm` → maximize/minimize split
-
-- `<leader>to` / `<leader>tx` → new/close tab
-- `<leader>tn` / `<leader>tp` → next/prev tab
-- `<leader>tf` → open current buffer in new tab
+| Mode | Keys | Action |
+| --- | --- | --- |
+| Normal | `<leader>sv` / `<leader>sh` | Vertical / horizontal split |
+| Normal | `<leader>se` | Equalize splits |
+| Normal | `<leader>sx` | Close split |
+| Normal | `<leader>sm` | Maximize / minimize split |
+| Normal | `<leader>to` / `<leader>tx` | New tab / close tab |
+| Normal | `<leader>tn` / `<leader>tp` | Next / previous tab |
+| Normal | `<leader>tf` | Open current buffer in new tab |
 
 ### Telescope
 
-- `<leader>ff` → find files
-- `<leader>fr` → recent files
-- `<leader>fs` → live grep
-- `<leader>fc` → grep word under cursor
-- `<leader>ft` → TODOs (Telescope)
-- `<leader>fk` → keymaps
+| Mode | Keys | Action |
+| --- | --- | --- |
+| Normal | `<leader>ff` | Find files |
+| Normal | `<leader>fr` | Recent files |
+| Normal | `<leader>fs` | Live grep |
+| Normal | `<leader>fc` | Grep word under cursor |
+| Normal | `<leader>ft` | TODOs (Telescope) |
+| Normal | `<leader>fk` | Keymaps |
 
-Inside Telescope (insert mode):
+Inside Telescope:
 
-- `<C-j>` / `<C-k>` → move selection
-- `<C-q>` → send to quickfix and open Trouble
-- `<C-t>` → open results in Trouble
+| Mode | Keys | Action |
+| --- | --- | --- |
+| Insert | `<C-j>` / `<C-k>` | Move selection |
+| Insert | `<C-q>` | Send to quickfix and open Trouble |
+| Insert | `<C-t>` | Open results in Trouble |
 
 ### File explorer (nvim-tree)
 
-- `<leader>ee` → toggle tree
-- `<leader>ef` → locate current file in tree
-- `<leader>ec` → collapse
-- `<leader>er` → refresh
+| Mode | Keys | Action |
+| --- | --- | --- |
+| Normal | `<leader>ee` | Toggle tree |
+| Normal | `<leader>ef` | Locate current file in tree |
+| Normal | `<leader>ec` | Collapse |
+| Normal | `<leader>er` | Refresh |
 
 ### LSP (buffer-local)
 
-- `gd` → definition
-- `gD` → declaration
-- `gr` → references (Telescope)
-- `gi` → implementations (Telescope)
-- `gt` → type definitions (Telescope)
-- `K` → hover docs
-- `<leader>rn` → rename
-- `<leader>ca` → code action (normal/visual)
-- `<leader>d` → line diagnostics float
-- `<leader>D` → buffer diagnostics (Telescope)
-- `[d` / `]d` → prev/next diagnostic
-- `<leader>rs` → restart LSP
+| Mode | Keys | Action |
+| --- | --- | --- |
+| Normal | `gd` | Definition |
+| Normal | `gD` | Declaration |
+| Normal | `gr` | References (Telescope) |
+| Normal | `gi` | Implementations (Telescope) |
+| Normal | `gt` | Type definitions (Telescope) |
+| Normal | `K` | Hover docs |
+| Normal | `<leader>rn` | Rename |
+| Normal / Visual | `<leader>ca` | Code action |
+| Normal | `<leader>d` | Line diagnostics float |
+| Normal | `<leader>D` | Buffer diagnostics (Telescope) |
+| Normal | `[d` / `]d` | Previous / next diagnostic |
+| Normal | `<leader>rs` | Restart LSP |
 
 ### Formatting / linting
 
-- `<leader>mp` → format file / selection
-- `<leader>l` → lint current file
+| Mode | Keys | Action |
+| --- | --- | --- |
+| Normal / Visual | `<leader>mp` | Format file / selection |
+| Normal | `<leader>l` | Lint current file |
 
 ### Git
 
-- `<leader>lg` → LazyGit
+| Mode | Keys | Action |
+| --- | --- | --- |
+| Normal | `<leader>lg` | LazyGit |
 
 Gitsigns:
 
-- `[h` / `]h` → prev/next hunk
-- `<leader>hs` / `<leader>hr` → stage/reset hunk (normal/visual)
-- `<leader>hS` / `<leader>hR` → stage/reset buffer
-- `<leader>hu` → undo stage hunk
-- `<leader>hp` → preview hunk
-- `<leader>hb` / `<leader>hB` → blame line / toggle blame
-- `<leader>hd` / `<leader>hD` → diff this / diff vs `~`
+| Mode | Keys | Action |
+| --- | --- | --- |
+| Normal | `[h` / `]h` | Previous / next hunk |
+| Normal / Visual | `<leader>hs` / `<leader>hr` | Stage / reset hunk |
+| Normal | `<leader>hS` / `<leader>hR` | Stage / reset buffer |
+| Normal | `<leader>hu` | Undo stage hunk |
+| Normal | `<leader>hp` | Preview hunk |
+| Normal | `<leader>hb` / `<leader>hB` | Blame line / toggle blame |
+| Normal | `<leader>hd` / `<leader>hD` | Diff this / diff vs `~` |
 
 ### Trouble
 
-- `<leader>xw` → workspace diagnostics
-- `<leader>xd` → document diagnostics
-- `<leader>xq` → quickfix list
-- `<leader>xl` → location list
-- `<leader>xt` → TODOs
+| Mode | Keys | Action |
+| --- | --- | --- |
+| Normal | `<leader>xw` | Workspace diagnostics |
+| Normal | `<leader>xd` | Document diagnostics |
+| Normal | `<leader>xq` | Quickfix list |
+| Normal | `<leader>xl` | Location list |
+| Normal | `<leader>xt` | TODOs |
 
 ### Sessions
 
-- `<leader>wr` → restore session for cwd
-- `<leader>ws` → save session for cwd
+| Mode | Keys | Action |
+| --- | --- | --- |
+| Normal | `<leader>wr` | Restore session for cwd |
+| Normal | `<leader>ws` | Save session for cwd |
 
 ### Substitute
 
-- `<leader>r` → substitute with motion
-- `<leader>rr` → substitute line
-- `<leader>R` → substitute to end of line
-- Visual: `<leader>r` → substitute selection
+| Mode | Keys | Action |
+| --- | --- | --- |
+| Normal | `<leader>r` | Substitute with motion |
+| Normal | `<leader>rr` | Substitute line |
+| Normal | `<leader>R` | Substitute to end of line |
+| Visual | `<leader>r` | Substitute selection |
 
 ### TODO comments
 
-- `[t` / `]t` → prev/next todo
+| Mode | Keys | Action |
+| --- | --- | --- |
+| Normal | `[t` / `]t` | Previous / next todo |
 
 ### Treesitter textobjects
 
