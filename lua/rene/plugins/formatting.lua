@@ -21,6 +21,7 @@ return {
         lua = { "stylua" },
         python = { "ruff" },
         sh = { "shfmt" },
+        go = { "gofumpt" },
       },
       format_on_save = false,
     })

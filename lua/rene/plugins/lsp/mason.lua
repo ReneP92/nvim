@@ -15,6 +15,7 @@ return {
         "emmet_ls",
         "prismals",
         "eslint",
+        "gopls",
       },
     },
     dependencies = {
@@ -42,6 +43,8 @@ return {
         "ruff", -- python formatter
         "eslint_d",
         "shfmt",
+        "gofumpt",
+        "golangci-lint",
       },
     },
     dependencies = {
