@@ -3,7 +3,10 @@ return {
   -- The upstream repo is now an incompatible rewrite on the default branch.
   -- Pin to the backward-compatible branch so `require("nvim-treesitter.configs")` works.
   branch = "master",
-  event = { "BufReadPost", "BufNewFile" },
+  -- Load Treesitter early so its FileType autocmds are registered
+  -- before you create or open new buffers (fixes missing highlight
+  -- on newly created files like Terraform).
+  lazy = false,
   cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
   build = ":TSUpdate",
   opts = {
@@ -49,5 +52,10 @@ return {
   config = function(_, opts)
     require("nvim-treesitter.configs").setup(opts)
     vim.treesitter.language.register("bash", "zsh")
+    -- Some setups (or plugins) set *.tf buffers to the custom
+    -- filetype \"tf\" instead of \"terraform\". Treesitter's parser
+    -- is named \"terraform\", so map the tf filetype to it so that
+    -- new Terraform files get proper highlighting immediately.
+    vim.treesitter.language.register("terraform", "tf")
   end,
 }
