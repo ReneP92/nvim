@@ -16,6 +16,7 @@ return {
         "prismals",
         "eslint",
         "gopls",
+        "terraformls",
       },
     },
     dependencies = {
