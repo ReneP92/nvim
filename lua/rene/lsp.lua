@@ -1,4 +1,6 @@
 local keymap = vim.keymap -- for conciseness
+-- Set LSP log level to warn to prevent log file from growing too large
+vim.lsp.set_log_level("warn")
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("UserLspConfig", {}),
   callback = function(ev)
