@@ -10,11 +10,11 @@ keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
 keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement
 
--- move line up/down (leader so they work in Mac terminals)
-keymap.set("n", "<leader>j", ":m .+1<CR>==", { desc = "Move line down" })
-keymap.set("n", "<leader>k", ":m .-2<CR>==", { desc = "Move line up" })
-keymap.set("v", "<leader>j", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
-keymap.set("v", "<leader>k", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
+-- move line up/down
+keymap.set("n", "<C-j>", ":m .+1<CR>==", { desc = "Move line down" })
+keymap.set("n", "<C-k>", ":m .-2<CR>==", { desc = "Move line up" })
+keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
+keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
